@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <link rel="icon" type="image/png" href="favicon-32x32.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vzdálená pomoc – MycatHost</title>
+
+    <style>
+        .top-right-logo {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+        .top-right-logo img {
+            width: 32px;
+            height: 32px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            background-color: #007BFF;
+            padding: 20px;
+            text-align: left;
+        }
+        .header h1 {
+            color: white;
+            display: inline;
+            font-size: 28px;
+        }
+        .header h1 span {
+            color: red;
+        }
+
+        /* NAV */
+        .nav {
+            background-color: #333;
+            padding: 14px;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+        .nav a {
+            position: relative;
+            text-decoration: none;
+            color: white;
+            display: inline-flex;
+            align-items: flex-end;
+            justify-content: center;
+            width: 220px;
+            height: 130px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            font-size: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .nav a span {
+            background: rgba(0,0,0,0.45);
+            width: 100%;
+            padding: 8px;
+            text-align: center;
+        }
+
+        /* Obrázky */
+        .nav a.basic { background-image: url('https://store-images.s-microsoft.com/image/apps.60323.14294656681058683.4d17bdd8-7026-429a-846f-cf7836bc9e56.a69e6905-8926-4a48-b243-14a039b97aae?mode=scale&q=90&h=1080&w=1920&format=jpg'); }
+        .nav a.beefy { background-image: url('https://s1.raise3d.com/2024/11/7-min.jpg'); }
+        .nav a.ultimate { background-image: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/304930/c5bc3d72f1f11f4644856d04cc038ee93dfa070d.jpg'); }
+        .nav a.about { background-image: url('https://iregister.al/wp-content/uploads/2019/04/server-hosting.jpeg'); }
+        .nav a.dalsi { background-image: url('https://thumbs.dreamstime.com/b/man-fix-server-network-data-center-room-67131350.jpg'); }
+
+        /* Vzdálená pomoc karta */
+        .help-box {
+            background: #f9f9f9;
+            width: 90%;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 16px;
+            color: #000;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .help-box h2 {
+            margin-bottom: 20px;
+        }
+        .help-box p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .help-box a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 14px 28px;
+            background: #007BFF;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .help-box a:hover {
+            background: #0056b3;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            color: white;
+            margin-top: auto;
+        }
+
+        /* Mobilní režim */
+        @media (max-width: 600px) {
+            .nav {
+                flex-direction: column;
+            }
+            .nav a {
+                width: 90%;
+                height: 100px;
+                font-size: 18px;
+            }
+            .help-box {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo -->
+    <div class="top-right-logo">
+        <img src="favicon-32x32.png" alt="Logo">
+    </div>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1><a href="https://mycathost.cz" style="color:white; text-decoration:none;">Mycat<span>Host</span></a></h1>
+    </div>
+
+    <!-- NAVIGACE nahoře -->
+    <div class="nav">
+        <a href="https://luky1212.github.io/MycatHost.cz-Basic/" class="basic"><span>Minecraft</span></a>
+        <a href="https://luky1212.github.io/MycatHost.cz-Beefy/" class="beefy"><span>3D Tisk</span></a>
+        <a href="https://luky1212.github.io/MycatHost.cz-Ultimate/" class="ultimate"><span>Unturned</span></a>
+        <a href="https://luky1212.github.io/MycatHost.cz-AboutUs/" class="about"><span>About Us</span></a>
+        <a href="https://luky1212.github.io/MycatHost.cz-DalsiSluzby/" class="dalsi"><span>Další Služby</span></a>
+    </div>
+
+    <!-- HLAVNÍ OBSAH -->
+    <div class="help-box">
+        <h2>Vzdálená pomoc</h2>
+        <p>Pomůžeme vám s počítačem na dálku přes bezpečné připojení.</p>
+        <p>Ideální pro odstranění virů, nastavení systému, instalaci programů nebo diagnostiku problémů.</p>
+
+        <h3>Jak se připojit?</h3>
+        <p>1️⃣ Stáhněte TeamViewer QuickSupport<br>2️⃣ Pošlete nám ID a heslo<br>3️⃣ Technik se k vám připojí</p>
+
+        <a href="https://www.teamviewer.com/en-us/download/windows/" target="_blank">Stáhnout TeamViewer QuickSupport</a>
+    </div>
+
+    <div class="footer">MycatHost.cz 2025</div>
+
+</body>
+</html>
